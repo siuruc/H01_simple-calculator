@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>Calculator</h1>
+    <div class="container">
+      <div class="output">
+        <p id="result"><br /></p>
+      </div>
+      <div class="input">
+        <input type="number" id="input1" placeholder="Number 1" />
+      </div>
+      <div class="input">
+        <input type="number" id="input2" placeholder="Number 2" />
+      </div>
+
+      <div class="operator">
+        <input id="button" type="button" value="+" onclick="calculate('add')" />
+      </div>
+      <div class="operator">
+        <input id="button" type="button" value="-" onclick="calculate('sub')" />
+      </div>
+      <div class="operator">
+        <input id="button" type="button" value="x" onclick="calculate('mul')" />
+      </div>
+      <div class="operator">
+        <input id="button" type="button" value="÷" onclick="calculate('div')" />
+      </div>
+      <div class="operator">
+        <input id="button" type="button" value="%" onclick="calculate('mod')" />
+      </div>
+      <div class="operator">
+        <input id="button" type="button" value="^" onclick="calculate('exp')" />
+      </div>
+    </div>
+    <script>
+      function calculate(a) {
+        var x = document.getElementById("input1").value;
+        var y = document.getElementById("input2").value;
+        var op = a;
+        x = Number(x);
+        y = Number(y);
+        while (x != "" && y != "") {
+          if (op == "add") {
+            return (document.getElementById("result").innerHTML = x + y);
+          } else if (op == "sub") {
+            return (document.getElementById("result").innerHTML = x - y);
+          } else if (op == "mul") {
+            return (document.getElementById("result").innerHTML = x * y);
+          } else if (op == "div") {
+            return (document.getElementById("result").innerHTML = x / y);
+          } else if (op == "mod") {
+            return (document.getElementById("result").innerHTML = x % y);
+          } else if (op == "exp") {
+            return (document.getElementById("result").innerHTML = x ** y);
+          }
+        }
+        (document.getElementById("result").innerHTML = "Give 2 numbers")
+      }
+    </script>
+  </body>
+</html>
